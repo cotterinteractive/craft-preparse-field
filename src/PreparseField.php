@@ -116,7 +116,7 @@ class PreparseField extends Plugin
                 }
 
                 $key = $element->id . '__' . $element->siteId;
-                    
+
                 if (!isset($this->preparsedElements['onPropagate'][$key])) {
                     $this->preparsedElements['onPropagate'][$key] = true;
 
@@ -208,7 +208,8 @@ class PreparseField extends Plugin
      */
     private function resetUploads()
     {
-        $_FILES = [];
-        UploadedFile::reset();
+        unset($_FILES);
+        // $_FILES = [];
+        // UploadedFile::reset();
     }
 }
